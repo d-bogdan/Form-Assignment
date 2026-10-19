@@ -20,3 +20,35 @@
     gap: 10px; 
     font-family: sans-serif;
 }
+
+:root {
+  --price: 0;
+}
+
+body {
+  padding-top: 10%;
+}
+
+.price-slider-wrapper {
+  margin: 0 auto;
+  width: 350px;
+}
+
+.price,
+.input-price {
+  vertical-align: middle;
+}
+
+.price {
+  margin-left: 0.5rem;
+}
+
+.price-slider {
+  display: block;
+  margin-top: 1rem;
+}
+
+.price:before {
+  counter-reset: variable var(--price);
+  content: counter(variable) "$";
+}
