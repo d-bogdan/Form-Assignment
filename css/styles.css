@@ -1,0 +1,22 @@
+.lang {
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    max-width: 450px;
+}
+
+.summary {
+    padding: 10px; 
+    cursor: pointer; 
+    background: #f5f5f5; 
+    font-weight: bold; 
+    font-family: sans-serif;
+}
+
+.lang_selection{
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    font-family: sans-serif;
+}
