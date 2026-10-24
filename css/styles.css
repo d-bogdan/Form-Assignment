@@ -23,32 +23,50 @@
 
 :root {
   --price: 0;
+  --layover: 0;
 }
 
 body {
   padding-top: 10%;
 }
 
-.price-slider-wrapper {
-  margin: 0 auto;
+.price-slider-wrapper,
+.layover-slider-wrapper {
+  margin: 0 auto 2rem auto;
   width: 350px;
 }
 
 .price,
-.input-price {
+.layover-val,
+.input-price,
+.input-layover {
   vertical-align: middle;
 }
 
-.price {
+.price,
+.layover-val {
   margin-left: 0.5rem;
 }
 
-.price-slider {
+.price-slider,
+.layover-slider {
   display: block;
   margin-top: 1rem;
 }
 
+/* Formats the price value with a dollar symbol */
 .price:before {
-  counter-reset: variable var(--price);
-  content: counter(variable) "$";
+  counter-reset: price-var var(--price);
+  content: counter(price-var) "$";
 }
+
+/* Formats the layover value with hours suffix */
+.layover-val:before {
+  counter-reset: layover-var var(--layover);
+  content: counter(layover-var) " hrs";
+}
+
+
+
+
+
