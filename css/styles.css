@@ -66,6 +66,25 @@ body {
   content: counter(layover-var) " hrs";
 }
 
+.trips-and-activities {
+  width: 300px;
+  height: 400px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.trips-and-activities p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.trips-and-activities::-webkit-scrollbar {
+  width: 12px;
+}
+.trips-and-activities::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
 
 
 
