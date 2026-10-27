@@ -117,6 +117,12 @@ legend {
     padding-right: 0.5rem;
 }
 
+/* DO NOT TOUCH THIS PART. IF YOU WANT TO CHANGE ANYTHING ASK ME(BOGDAN) */
+:root {
+    --price: 0;
+    --layover: 0;
+}
+
 .price-slider-wrapper,
 .layover-slider-wrapper {
     margin-top: 1.5rem;
@@ -124,13 +130,33 @@ legend {
 
 .price-slider,
 .layover-slider {
+    display: block;
     margin-top: 0.5rem;
 }
 
+.price,
+.layover-val,
 .input-price,
 .input-layover {
+    vertical-align: middle;
     width: 75%;
 }
+
+.price,
+.layover {
+  margin-left: 0.5rem;
+}
+
+.price:before {
+    counter-reset: price-var var(--price);
+    content: counter(price-var) "$";
+}
+
+.layover:before {
+    counter-reset: layover-var var(--layover);
+    content: counter(layover-var) " hrs";
+}
+/*-----------------------------------------------------------------------*/
 
 #date-picker {
     display: block;
