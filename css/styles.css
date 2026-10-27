@@ -126,6 +126,8 @@ legend {
 .price-slider-wrapper,
 .layover-slider-wrapper {
     margin-top: 1.5rem;
+    /* wojtek's addition of bottom padding, if something breaks it was set to 0 before */
+    margin-bottom: 1rem;
 }
 
 .price-slider,
@@ -160,7 +162,7 @@ legend {
 
 #date-picker {
     display: block;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 0.4rem;
 }

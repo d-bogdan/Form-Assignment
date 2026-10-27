@@ -17,15 +17,15 @@
                     <legend>Passport and Credentials</legend>
                     <label>First name:
                         <input type="text" name="firstNameField" id="firstNameField" placeholder="Type here"
-                            minlength="2" maxlength="20" required>
+                            minlength="2" maxlength="20" pattern="[a-zA-Z\s\-]+" title="Letters, spaces, and hyphens only" required>
                     </label>
                     <label>Last name:
-                        <input type="text" name="lastNameField" id="lastNameField" placeholder="Type here" minlength="3"
-                            maxlength="20" required>
+                        <input type="text" name="lastNameField" id="lastNameField" placeholder="Type here" minlength="2"
+                            maxlength="20" pattern="[a-zA-Z\s\-]+" title="Letters, spaces, and hyphens only" required>
                     </label>
                     <label>Passport number:
                         <input type="text" name="passportField" id="passportField" placeholder="Type here" minlength="3"
-                            maxlength="9" required>
+                            maxlength="15" pattern="[a-zA-Z0-9]+" required>
                     </label>
 
                     <p>Nationality</p>
@@ -363,8 +363,8 @@
                         </div>
 
                         <div>
-                            <input type="date" id="date-picker" name="travel_date">
                             <label for="date-picker">Preferred Travel Dates</label>
+                            <input type="date" id="date-picker" name="travel_date">
                         </div>
                     </div>
                 </fieldset>
