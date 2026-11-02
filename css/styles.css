@@ -149,8 +149,8 @@ legend {
     padding-right: 0.5rem;
 }
  
-/* DO NOT TOUCH THIS PART. IF YOU WANT TO CHANGE ANYTHING ASK ME(BOGDAN) */
 :root {
+    /* Holds the dynamic range values updated instantly by inline HTML oninput/onclick events */
     --price: 0;
     --layover: 0;
 }
@@ -158,7 +158,6 @@ legend {
 .price-slider-wrapper,
 .layover-slider-wrapper {
     margin-top: 1.5rem;
-    /* wojtek's addition of bottom padding, if something breaks it was set to 0 before */
     margin-bottom: 1rem;
 }
  
@@ -181,16 +180,19 @@ legend {
   margin-left: 0.5rem;
 }
  
+/* Leverages CSS counters and pseudo-elements to display values without JavaScript */
 .price:before {
+    /* Stores the CSS custom property value into a counter */
     counter-reset: price-var var(--price);
+    /* Dynamically strings the real-time counter value with the currency symbol */
     content: counter(price-var) "$";
 }
  
+/*Same thing as above */
 .layover:before {
     counter-reset: layover-var var(--layover);
     content: counter(layover-var) " hrs";
 }
-/*-----------------------------------------------------------------------*/
  
 /* Travel date picker */
 #date-picker {
