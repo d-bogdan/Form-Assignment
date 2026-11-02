@@ -48,6 +48,7 @@ legend {
 }
 
 .form-section input[type="text"],
+.form-section input[type="tel"],
 .form-section select {
     display: block;
     width: 100%;
