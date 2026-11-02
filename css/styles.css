@@ -1,7 +1,9 @@
+/* Use border-box so padding and borders are included in element widths */
 * {
     box-sizing: border-box;
 }
-
+ 
+/* Page background, text color, font and outer spacing */
 body {
     margin: 0;
     padding: 2rem 1rem;
@@ -9,44 +11,52 @@ body {
     color: #222222;
     font-family: Arial, sans-serif;
 }
-
+ 
+/* Center the form and limit its width on large screens */
 form {
     max-width: 70rem;
     margin: auto;
 }
-
+ 
+/* Base style for all fieldsets; min-width: 0 stops them overflowing the grid */
 fieldset {
     min-width: 0;
     border: 0.1rem solid #aaaaaa;
 }
-
+ 
+/* Outer "My Form" fieldset */
 form > fieldset {
     padding: 1.5rem;
     background-color: #ffffff;
 }
-
+ 
+/* Fieldset titles */
 legend {
     padding: 0 0.5rem;
     font-weight: bold;
 }
-
+ 
+/* Two-column grid holding the form sections */
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
-
+ 
+/* Each section box (Passport, Contact, Personal, Trips) */
 .form-section {
     padding: 1.5rem;
     background-color: #ffffff;
 }
-
+ 
+/* Stack the labels in the Passport and Contact sections */
 .passport-section > label,
 .contact-section > label {
     display: block;
     margin-bottom: 1rem;
 }
-
+ 
+/* Text, phone and dropdown fields: full width up to 22rem */
 .form-section input[type="text"],
 .form-section input[type="tel"],
 .form-section select {
@@ -59,16 +69,19 @@ legend {
     border-radius: 0.25rem;
     background-color: #ffffff;
 }
-
+ 
+/* Question text above dropdowns, checkboxes and radio buttons */
 .form-section p {
     margin: 1rem 0 0.5rem;
     font-weight: bold;
 }
-
+ 
+/* "Languages Spoken" heading */
 .personal-section h3 {
     margin-top: 0;
 }
-
+ 
+/* Language dropdown boxes, three side by side */
 .lang {
     display: inline-block;
     vertical-align: top;
@@ -77,7 +90,8 @@ legend {
     border: 0.1rem solid #cccccc;
     border-radius: 0.25rem;
 }
-
+ 
+/* Clickable header of each language box */
 .summary {
     padding: 0.5rem;
     background-color: #eeeeee;
@@ -86,7 +100,8 @@ legend {
     cursor: pointer;
     overflow-wrap: anywhere;
 }
-
+ 
+/* Checkbox list inside each language box */
 .lang_selection {
     display: flex;
     flex-direction: column;
@@ -94,49 +109,52 @@ legend {
     padding: 0.5rem;
     font-size: 0.85rem;
 }
-
+ 
+/* Keep each checkbox next to its text and let long names wrap */
 .lang_selection label {
     display: flex;
     align-items: flex-start;
     gap: 0.3rem;
     overflow-wrap: anywhere;
 }
-
+ 
+/* Profile picture upload */
 .profile {
     margin-top: 1.5rem;
 }
-
+ 
 .profile input {
     display: block;
     margin-top: 0.5rem;
     max-width: 100%;
 }
-
+ 
+/* Trips and activities area scrolls when content is taller than 28rem */
 .trips-and-activities {
     max-height: 28rem;
     overflow-y: auto;
     padding-right: 0.5rem;
 }
-
+ 
 /* DO NOT TOUCH THIS PART. IF YOU WANT TO CHANGE ANYTHING ASK ME(BOGDAN) */
 :root {
     --price: 0;
     --layover: 0;
 }
-
+ 
 .price-slider-wrapper,
 .layover-slider-wrapper {
     margin-top: 1.5rem;
     /* wojtek's addition of bottom padding, if something breaks it was set to 0 before */
     margin-bottom: 1rem;
 }
-
+ 
 .price-slider,
 .layover-slider {
     display: block;
     margin-top: 0.5rem;
 }
-
+ 
 .price,
 .layover-val,
 .input-price,
@@ -144,36 +162,39 @@ legend {
     vertical-align: middle;
     width: 75%;
 }
-
+ 
 .price,
 .layover {
   margin-left: 0.5rem;
 }
-
+ 
 .price:before {
     counter-reset: price-var var(--price);
     content: counter(price-var) "$";
 }
-
+ 
 .layover:before {
     counter-reset: layover-var var(--layover);
     content: counter(layover-var) " hrs";
 }
 /*-----------------------------------------------------------------------*/
-
+ 
+/* Travel date picker */
 #date-picker {
     display: block;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 0.4rem;
 }
-
+ 
+/* Description box spans both grid columns */
 .description-section {
     grid-column: 1 / -1;
     padding: 1rem;
     border: 0.1rem solid #aaaaaa;
 }
-
+ 
+/* Description text area */
 .Textarea textarea {
     display: block;
     width: 100%;
@@ -182,36 +203,39 @@ legend {
     padding: 0.5rem;
     border: 0.1rem solid #aaaaaa;
 }
-
+ 
+/* Submit button aligned to the right */
 .submit {
     margin-top: 1rem;
     text-align: right;
 }
-
+ 
 .submit input {
     padding: 0.6rem 1.5rem;
     border: 0.1rem solid #777777;
     background-color: #eeeeee;
     cursor: pointer;
 }
-
+ 
+/* Tablets and phones: one column, no inner scrolling */
 @media (max-width: 48rem) {
     .form-grid {
         grid-template-columns: 1fr;
     }
-
+ 
     .trips-and-activities {
         max-height: none;
         overflow: visible;
     }
 }
-
+ 
+/* Small phones: less padding and smaller language text */
 @media (max-width: 25rem) {
     form > fieldset,
     .form-section {
         padding: 0.75rem;
     }
-
+ 
     .summary,
     .lang_selection {
         font-size: 0.7rem;

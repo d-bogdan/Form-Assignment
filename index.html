@@ -9,12 +9,16 @@
 </head>
 
 <body>
+    
     <form action="http://www.no-where.com/formhandler.php" method="get">
         <fieldset>
             <legend>My Form</legend>
+            <!-- Grid container that lays out the form sections -->
             <div class="form-grid">
+                <!-- Section 1: Passport and credentials -->
                 <fieldset class="form-section passport-section">
                     <legend>Passport and Credentials</legend>
+                    <!-- Name fields: letters, spaces and hyphens only, 2-20 characters -->
                     <label>First name:
                         <input type="text" name="firstNameField" id="firstNameField" placeholder="Type here"
                             minlength="2" maxlength="20" pattern="[a-zA-Z\s\-]+" title="Letters, spaces, and hyphens only" required>
@@ -23,11 +27,13 @@
                         <input type="text" name="lastNameField" id="lastNameField" placeholder="Type here" minlength="2"
                             maxlength="20" pattern="[a-zA-Z\s\-]+" title="Letters, spaces, and hyphens only" required>
                     </label>
+                    <!-- Passport number: letters and numbers only, 3-15 characters -->
                     <label>Passport number:
                         <input type="text" name="passportField" id="passportField" placeholder="Type here" minlength="3"
                             maxlength="15" pattern="[a-zA-Z0-9]+" required>
                     </label>
 
+                    <!-- Nationality dropdown; aria-labelledby links it to the "Nationality" text for screen readers -->
                     <p id="nationality-heading">Nationality</p>
                     <select aria-labelledby="nationality-heading" name="nationality" id="nationality" required>
                         <option value="" disabled selected>Select nationality</option>
@@ -112,8 +118,10 @@
                     </select>
                 </fieldset>
 
+                <!-- Section 2: Contact information -->
                 <fieldset class="form-section contact-section">
                     <legend>Contact Information</legend>
+                    <!-- Emergency contact name; aria-describedby makes screen readers read the hidden hint below -->
                     <label>Emergency contact:
                         <input aria-describedby="emergency-hint" type="text" name="emergencyField" id="emergencyField" placeholder="First and Last name"
                             minlength="2" maxlength="40" pattern="[a-zA-Z\s\-]+" title="Letters, spaces, and hyphens only" required>
@@ -121,6 +129,7 @@
                     <span id="emergency-hint" hidden>First and last name only</span>
 
 
+                    <!-- Emergency phone number in the format 12-34-56-78, with a hidden hint for screen readers -->
                     <label>Emergency contact phone number:
                         <input aria-describedby="emergency-phone-hint" type="tel" name="emergencyPhoneField" id="emergencyPhoneField" placeholder="12-34-56-78"
                             pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required  title="12-34-56-78"/>
@@ -128,8 +137,10 @@
                     <span id="emergency-phone-hint" hidden>Format: 12-34-56-78</span>
                 </fieldset>
 
+                <!-- Section 3: Personal information -->
                 <fieldset class="form-section personal-section">
                     <legend>Personal Information</legend>
+                    <!-- Languages spoken: three collapsible checkbox groups, grouped under this heading for screen readers -->
                     <h3 id="languages-heading">Languages Spoken</h3>
                     <div role="group" aria-labelledby="languages-heading">
                     
@@ -215,6 +226,7 @@
                     </details>
                     </div>
 
+                    <!-- Travel group size: radio buttons, only one can be chosen -->
                     <p id="group-size-heading">How do you like to travel?</p>
 
                     <input aria-describedby="group-size-heading" type="radio" id="soloTravel" value="solo" name="groupSize">
@@ -224,14 +236,17 @@
                     <input aria-describedby="group-size-heading" type="radio" id="groupTravel" value="group" name="groupSize">
                     <label for="groupTravel">group (>2)</label>
 
+                    <!-- Profile picture upload: accepts image files only -->
                     <div class="profile picture">
                         <label for="profilePicture">Upload your profile picture:</label>
                         <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
                     </div>
                 </fieldset>
 
+                <!-- Section 4: Trips and activities -->
                 <fieldset class="form-section trips-section">
                     <legend>Trips and Activities</legend>
+                    <!-- Currency dropdown; aria-labelledby links it to the "Currency" text -->
                     <p id="currency-heading">Currency</p>
 
                     <select aria-labelledby="currency-heading" name="currency" id="currency" required>
@@ -299,6 +314,7 @@
                     </select>
 
                     <div class="trips-and-activities">
+                        <!-- Continents visited: checkboxes, more than one can be chosen -->
                         <p id="continents-heading">Continents visited</p>
 
                         <input aria-describedby="continents-heading" type="checkbox" id="continent1" name="continents" value="asia">
@@ -322,6 +338,7 @@
                         <input aria-describedby="continents-heading" type="checkbox" id="continent7" name="continents" value="australia">
                         <label for="continent7">Australia</label> <br>
 
+                        <!-- Types of activities: checkboxes -->
                         <p id="activities-heading">Types of activities</p>
 
                         <input aria-describedby="activities-heading" type="checkbox" id="activity-nature" name="activity-nature" value="activity-nature">
@@ -336,6 +353,7 @@
                         <input aria-describedby="activities-heading" type="checkbox" id="activity-nightlife" name="activity-nightlife" value="activity-nightlife">
                         <label for="activity-nightlife">Nightlife (Clubs, concerts, etc.)</label> <br>
 
+                        <!-- Preferred contact method: radio buttons -->
                         <p id="preference-heading">Choose your preferred contact method:</p>
 
                         <input aria-describedby="preference-heading" type="radio" id="solo" name="travel_preference" value="solo">
@@ -344,6 +362,7 @@
                         <input aria-describedby="preference-heading" type="radio" id="group" name="travel_preference" value="group">
                         <label for="group">Group</label>
 
+                        <!-- Max Price Slider: updates the --price CSS variable so the chosen value can be displayed -->
                         <div class="price-slider-wrapper">
                             <label for="price">Max. Price</label>
                             <div class="price-slider">
@@ -357,6 +376,7 @@
 
                         <!-- Max Layover Hours Slider -->
 
+                        <!-- Updates the --layover CSS variable so the chosen value can be displayed -->
                         <div class="layover-slider-wrapper">
                             <label for="layover">Max. Layover Hours</label>
                             <div class="layover-slider">
@@ -368,6 +388,7 @@
                             </div>
                         </div>
 
+                        <!-- Preferred travel date picker -->
                         <div>
                             <label for="date-picker">Preferred Travel Dates</label>
                             <input type="date" id="date-picker" name="travel_date">
@@ -375,6 +396,7 @@
                     </div>
                 </fieldset>
 
+                <!-- Section 5: Description of the perfect trip -->
                 <div class="description-section">
                     <div class="Textarea">
                         <label for="comments">Description of the perfect trip</label> <br>
@@ -384,6 +406,7 @@
                 </div>
             </div>
 
+            <!-- Submit button -->
             <div class="submit">
                 <input type="submit" value="Submit">
             </div>
