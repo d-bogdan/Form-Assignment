@@ -11,6 +11,19 @@ body {
     color: #222222;
     font-family: Arial, sans-serif;
 }
+
+/* Banner image: same width as the form, cropped to fit the wireframe's wide banner shape */
+.banner {
+    max-width: 70rem;
+    margin: 0 auto 1rem;
+}
+
+.banner-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 1;
+    object-fit: cover;
+}
  
 /* Center the form and limit its width on large screens */
 form {
@@ -240,5 +253,12 @@ legend {
     .lang_selection {
         font-size: 0.7rem;
         padding: 0.3rem;
+    }
+}
+
+/* Phones: taller banner, like the phone wireframe */
+@media (max-width: 48rem) {
+    .banner-img {
+        aspect-ratio: 3 / 1;
     }
 }
